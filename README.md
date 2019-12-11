@@ -55,3 +55,13 @@ function selectionSort(arr){
 
 selectionSort([1, 5, 6, 2, 3, 8, 4, 7, 9,]);
 ```
+
+## Insertion sort
+
+## Quicksort
+
+## Merge sort
+
+## Counting sort
+
+## Binary search
