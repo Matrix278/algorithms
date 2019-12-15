@@ -53,7 +53,7 @@ function selectionSort(arr){
     return arr;
 }
 
-selectionSort([1, 5, 6, 2, 3, 8, 4, 7, 9,]);
+selectionSort([1, 5, 6, 2, 3, 8, 4, 7, 9]);
 ```
 
 ## Insertion sort(Сортировка вставками)
@@ -89,6 +89,36 @@ insertionSort([3, 0, 2, 5, 6, 4, 1]);
 ```
 
 ## Binary search(Бинарный поиск)
+Binary search is an algorithm used to find a particular item in a **sorted list**. It’s essential for the list to be sorted beforehand or the algorithm won’t be applicable. If you’ve ever dealt with binary search trees, this concept of this algorithm is similar. In each step, the algorithm compares the input element x with the value of the middle element in array. If the values match, return the index of middle. Otherwise, if x is less than the middle element, then the algorithm recurs for left side of middle element, else recurs for right side of middle element.
+
+### Visual
+![Binary search](binarySearch/binarySearch.gif)
+
+### Code:
+```javascript
+function binarySearch(arr, target) {
+    let first = 0;
+    let last = arr.length - 1;
+    let position = -1;
+    let found = false;
+    let middle;
+
+    while (found === false && first <= last) {
+        middle = Math.floor((first + last) / 2);
+        if (arr[middle] == target) {
+            found = true;
+            position = middle;
+        }else if (arr[middle] > target){
+            last = middle - 1;
+        }else{
+            first = middle + 1;
+        }
+    }
+    return position;
+}
+
+binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], 13);
+```
 
 ## Merge sort(Сортировка слиянием)
 
