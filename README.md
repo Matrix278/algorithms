@@ -1,6 +1,6 @@
 # Algorithms
 
-## Bubble sort
+## Bubble sort(Сортировка пузырьком)
 Bubble sort compares each pair of elements in a list and swaps them if they are out of order until the list is sorted. Like insertion sort, bubble sort is a comparison algorithm and runs in O(n²) time, making it an inefficient algorithm for larger lists.
 
 ### Visual
@@ -28,7 +28,7 @@ function bubbleSort(arr) {
 bubbleSort([2, 6, 1, 9, 3, 8, 5, 4, 7]);
 ```
 
-## Selection sort
+## Selection sort(Сортировка выбором)
 A sort algorithm that repeatedly searches remaining items to find the least one and moves it to its final location. The run time is O(n²), where n is the number of elements. The number of swaps is O(n).
 
 ### Visual
@@ -56,7 +56,7 @@ function selectionSort(arr){
 selectionSort([1, 5, 6, 2, 3, 8, 4, 7, 9,]);
 ```
 
-## Insertion sort
+## Insertion sort(Сортировка вставками)
 Insertion sort is a simple sorting algorithm that works the way we sort playing cards in our hands. This sort is based on the idea that one element from the input elements is consumed in each iteration to find its correct position i.e, the position to which it belongs in a sorted array. Since is the first element has no other element to be compared with, it remains at its position. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort.
 
 ### Visual
@@ -88,12 +88,12 @@ function insertionSort(arr){
 insertionSort([3, 0, 2, 5, 6, 4, 1]);
 ```
 
-## Quicksort
+## Binary search(Бинарный поиск)
 
-## Merge sort
+## Merge sort(Сортировка слиянием)
 
-## Heapsort
+## Quicksort(Быстрая сортировка)
 
-## Counting sort
+## Counting sort(Сортировка подсчётом)
 
-## Binary search
+## Heapsort(Пирамидальная сортировка)
