@@ -152,6 +152,7 @@ The steps involved in Quick Sort are:
 - Call Quicksort recursively, taking into account the previous pivot to properly subdivide the left and right arrays. (A more detailed - - explanation can be found in the comments below)
 
 ### Visual
+![Quicksort](quickSort/quickSort2.gif)
 ![Quicksort](quickSort/quickSort.gif)
 
 ### Code:
