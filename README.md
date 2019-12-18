@@ -88,6 +88,28 @@ function insertionSort(arr){
 insertionSort([3, 0, 2, 5, 6, 4, 1]);
 ```
 
+## Linear search (Линейный поиск)
+In this algorithm, you can stop when the item is found and then there is no need to look further. In the best case, you could get lucky and the item you are looking at maybe at the first position in the array! But in the worst case, you would have to look at each and every item before you find the item at the last place or before you realize that the item is not in the array. The complexity therefore of the linear search is: O(n). If the element to be searched presides on the the first memory block then the complexity would be: O(1).
+
+### Visual
+![Linear search](linearSearch/linearSearch.gif)
+
+### Code:
+```javascript
+function linearSearch(arr, item) {
+  // Go through all the elements of arr to look for item.
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] === item) { // Found it!
+      return i;
+    }
+  }
+  // Item not found in the array.
+  return null;
+}
+
+linearSearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], 13);
+```
+
 ## Binary search (Бинарный поиск)
 Binary search is an algorithm used to find a particular item in a **sorted list**. It’s essential for the list to be sorted beforehand or the algorithm won’t be applicable. If you’ve ever dealt with binary search trees, this concept of this algorithm is similar. In each step, the algorithm compares the input element x with the value of the middle element in array. If the values match, return the index of middle. Otherwise, if x is less than the middle element, then the algorithm recurs for left side of middle element, else recurs for right side of middle element.
 
@@ -119,8 +141,6 @@ function binarySearch(arr, target) {
 
 binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], 13);
 ```
-
-## Linear search (Линейный поиск)
 
 ## Quicksort (Быстрая сортировка)
 
