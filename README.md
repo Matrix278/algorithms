@@ -143,6 +143,61 @@ binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
 ```
 
 ## Quicksort (Быстрая сортировка)
+Quick sort is an efficient divide and conquer sorting algorithm. Average case time complexity of Quick Sort is O(nlog(n)) with worst case time complexity being O(n^2).
+
+The steps involved in Quick Sort are:
+
+- Choose an element to serve as a pivot, in this case, the last element of the array is the pivot.
+- Partitioning: Sort the array in such a manner that all elements less than the pivot are to the left, and all elements greater than the pivot are to the right.
+- Call Quicksort recursively, taking into account the previous pivot to properly subdivide the left and right arrays. (A more detailed - - explanation can be found in the comments below)
+
+### Visual
+![Quicksort](quickSort/quickSort.gif)
+
+### Code:
+```javascript
+function swap(items, leftIndex, rightIndex){
+    var temp = items[leftIndex];
+    items[leftIndex] = items[rightIndex];
+    items[rightIndex] = temp;
+}
+function partition(items, left, right) {
+    var pivot   = items[Math.floor((right + left) / 2)], //middle element
+        i       = left, //left pointer
+        j       = right; //right pointer
+    while (i <= j) {
+        while (items[i] < pivot) {
+            i++;
+        }
+        while (items[j] > pivot) {
+            j--;
+        }
+        if (i <= j) {
+            swap(items, i, j); //sawpping two elements
+            i++;
+            j--;
+        }
+    }
+    return i;
+}
+
+function quickSort(items, left, right) {
+    var index;
+    if (items.length > 1) {
+        index = partition(items, left, right); //index returned from partition
+        if (left < index - 1) { //more elements on the left side of the pivot
+            quickSort(items, left, index - 1);
+        }
+        if (index < right) { //more elements on the right side of the pivot
+            quickSort(items, index, right);
+        }
+    }
+    return items;
+}
+
+var items = [5,3,7,6,2,9];
+quickSort(items, 0, items.length - 1);
+```
 
 ## Merge sort (Сортировка слиянием)
 
