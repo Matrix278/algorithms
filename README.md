@@ -200,8 +200,35 @@ var items = [5,3,7,6,2,9];
 quickSort(items, 0, items.length - 1);
 ```
 
-## Merge sort (Сортировка слиянием)
-
 ## Counting sort (Сортировка подсчётом)
+Counting sort is a sorting algorithm that sorts the elements of an array by counting the number of occurrences of each unique element in the array. It works on a limited set of elements. The count is stored in an auxiliary array and the sorting is done by mapping the count as an index of the auxiliary array. It runs in O(n + k) where n is the number of elements in the input array and k is the maximum key.
+
+### Code:
+```javascript
+function countingSort(arr, max) {
+    const count = new Array(max + 1);
+    for (let i = 0; i < max + 1; ++i) count[i] = 0;
+
+    for (let i = 0; i < arr.length; ++i) count[arr[i]] += 1;
+
+    let total = 0;
+    for (let i = 0; i < count.length; ++i) {
+        const prevTotal = total;
+        total += count[i];
+        count[i] = prevTotal;
+    }
+
+    const output = arr.slice();
+    for (let i = 0; i < arr.length; ++i) {
+        output[count[arr[i]]] = arr[i];
+        count[arr[i]] += 1;
+    }
+    return output;
+}
+
+countingSort([1, 2, 3, 2, 7, 9, 1, 0], 9);
+```
+
+## Merge sort (Сортировка слиянием)
 
 ## Heapsort (Пирамидальная сортировка)
